@@ -201,7 +201,7 @@ component. kadet-hub/recipes needs both for its `external-secrets` recipe.
   The key applies to both kinds, as `webhook_annotations` does.
 
   - Test: `kubernetes/tests/test_components.py::test_webhook_labels`; fixture target `complete`; `manual:` Kapitan 0.36.3 compiles fixture targets `minimal` and `complete` without the keys of K8S-25 to K8S-28 to the same output as 1.16.0, with both inventory backends
-  - Since: this change
+  - Since: #232
 
 - K8S-26: A component's `validating_webhooks` as a mapping MUST render one
   ValidatingWebhookConfiguration per key, named by the key, with the key's
@@ -216,7 +216,7 @@ component. kadet-hub/recipes needs both for its `external-secrets` recipe.
   drop a configuration that a class sets.
 
   - Test: `kubernetes/tests/test_components.py::test_validating_webhooks_mapping`; fixture target `complete`; `manual:` as K8S-25
-  - Since: this change
+  - Since: #232
 
 - K8S-27: A `validating_webhooks` mapping MUST fail the compile, naming the
   component, when the component also sets
@@ -224,7 +224,7 @@ component. kadet-hub/recipes needs both for its `external-secrets` recipe.
   neither a list nor `null`.
 
   - Test: `kubernetes/tests/test_components.py::test_validating_webhooks_mapping_fails`
-  - Since: this change
+  - Since: #232
 
 DEC-7: `validating_webhooks` takes a mapping next to the list, as `args`
 does (DEC-1). A second key such as
@@ -498,7 +498,7 @@ does not find.
   Related: K8S-17, K8S-24
 
   - Test: `kubernetes/tests/test_components.py::test_workload_name`, `::test_workload_name_derived_objects`, `::test_no_workload_name_renders_as_before`; fixture target `complete`; `manual:` as K8S-25
-  - Since: this change
+  - Since: #232
 
 DEC-8: `workload_name` renames the workload, the label its selectors use
 and its main container, and nothing else. The main container follows
